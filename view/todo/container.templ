@@ -1,0 +1,14 @@
+package todoview
+
+templ TodoContainer() {
+	<div
+		id="container"
+		hx-get="/todos"
+		hx-trigger="load"
+		hx-target="#container"
+		hx-swap="afterbegin"
+		class="flex flex-col items-center px-3 w-4/5 h-full"
+	>
+		@Add()
+	</div>
+}

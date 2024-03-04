@@ -1,0 +1,27 @@
+package todoview
+
+import "todo/internal/models"
+import "strconv"
+
+templ Edit(t models.Instance) {
+	<form
+		id={ "todo-edit_" + strconv.Itoa(int(t.Id)) }
+		class="flex flex-row gap-1 w-full"
+		hx-post={ "/todos/update?id=" + strconv.Itoa(int(t.Id)) }
+		hx-target={ "#todo-edit_" + strconv.Itoa(int(t.Id)) }
+		hx-swap="outerHTML"
+	>
+		<input
+			type="text"
+			name="content"
+			class="flex flex-grow h-10 shadow appearance-none border rounded py-2 px-3 text-gray-700 bg-gray-100 leading-tight"
+			value={ t.Content }
+		/>
+		<button
+			type="submit"
+			class="flex h-10 w-16 justify-center bg-green-600 focus:outline-none text-white bg-green-700font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+		>
+			Done
+		</button>
+	</form>
+}

@@ -1,0 +1,23 @@
+package todoview
+
+templ Add() {
+	<form
+		class="flex flex-row gap-1 w-full"
+		hx-post="/todos/add"
+		hx-target="#todo-list"
+		hx-swap="beforeend"
+		hx-on::after-request=" if(event.detail.successful) this.reset()"
+	>
+		<input
+			type="text"
+			name="content"
+			class="flex flex-grow h-10 shadow appearance-none border rounded py-2 px-3 text-gray-700 bg-gray-100 leading-tight"
+		/>
+		<button
+			type="submit"
+			class="flex h-10 w-16 justify-center bg-green-600 hover:bg-green-700 focus:outline-none text-white bg-green-700font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+		>
+			Add
+		</button>
+	</form>
+}

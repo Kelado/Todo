@@ -1,0 +1,14 @@
+package todoview
+
+import "todo/internal/models"
+
+templ TodoList(todos []models.Instance) {
+	<ul
+		id="todo-list"
+		class="flex flex-col gap-2 w-full"
+	>
+		for _, todo := range(todos) {
+			@Entry(todo)
+		}
+	</ul>
+}
