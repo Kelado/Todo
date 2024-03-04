@@ -1,0 +1,10 @@
+
+
+# Generated view go
+view/**/*.go
+
+# Generated css
+public/output.css
+
+# other files 
+**/.DS_Store
