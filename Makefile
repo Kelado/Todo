@@ -1,3 +1,5 @@
+all: build run
+
 build:
 	./bin/templ generate
 	go build -o bin/app
